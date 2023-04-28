@@ -1,0 +1,75 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title GENQ KYC Registration form
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ' crossorigin='anonymous')
+  link(rel='stylesheet' href='css/custom.css')
+.container
+  .row
+    .col-2
+    .col-8
+      div
+        h1#top(style='background-color: black; color: white; text-align: center; margin-top: 20px;') GENQ KYC FORM
+      form(name='register' action='/register' method='POST' onsubmit='return Validate(event);')
+        h4(style='color: rgb(117, 115, 115);') Bio Data
+        div(style='background-color: rgb(117, 115, 115); height: 8px;')
+        .row
+          .col
+            input#firstname.form-control(type='text' placeholder='First name' aria-label='First name' name='firstname')
+            small#firstnameErr
+          .col
+            input#lastname.form-control(type='text' placeholder='Last name' aria-label='Last name' name='lastname')
+            small#lastnameErr
+        .row
+          .col
+            input#dob.form-control(type='date' placeholder='Date of Birth' aria-label='Date of Birth' name='dob')
+            small#dobErr
+          .col
+            label.visually-hidden(for='specificSizeSelect') Preference
+            select#specificSizeSelect.form-select(name='gender')
+              option(selected='') Gender
+              option(value='male') Male
+              option(value='female') Female
+            small#genderErr
+        h4(style='color: rgb(117, 115, 115);') Location
+        div(style='background-color: rgb(117, 115, 115); height: 8px;')
+        .row
+          .col
+            label.visually-hidden(for='specificSizeSelect') Preference
+            select#specificSizeSelect.form-select(name='country')
+              option(selected='') Country
+              option(value='1') Uganda
+              option(value='2') Kenya
+              option(value='3') Tanzania
+              option(value='2') South Sudan
+              option(value='3') Rwanda
+            small#countryErr
+          .col
+            input#state.form-control(type='text' placeholder='State/District' aria-label='Last name' name='state')
+            small#stateErr
+        .row
+          .col
+            input#town.form-control(type='text' placeholder='Town' aria-label='First name' name='town')
+            small#townErr
+          .col
+            input#zipcode.form-control(type='text' placeholder='Zip code' aria-label='Last name' name='zipcode')
+            small#zipcodeErr
+        h4(style='color: rgb(117, 115, 115);') Contacts and Address
+        div(style='background-color: rgb(117, 115, 115); height: 8px;')
+        .row
+          .col
+            input#phone1.form-control(type='text' placeholder='Phone Number 1' aria-label='First name' name='phone1')
+            small#phone1Err
+          .col
+            input#phone2.form-control(type='text' placeholder='Phone Number 2' aria-label='Last name' name='phone2')
+            small#phone2Err
+        .row
+          .col
+            input#email.form-control(type='email' placeholder='Email' aria-label='First name' name='email')
+            small#emailErr
+        button.btn.btn-warning(type='submit' style='background-color: rgb(255, 157, 0) ; float: right; width: 300px;')
+          h4(style='margin-bottom:-1px ; color: white;') SUBMIT
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')
+script(src='../js/validation.js')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe' crossorigin='anonymous')
